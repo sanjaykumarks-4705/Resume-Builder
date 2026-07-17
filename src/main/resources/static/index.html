@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <title>Resume Builder Application</title>
+        <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        body{
+            background:#f4f6f9;
+        }
+        nav{
+            background:#0d6efd;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 60px;
+            box-shadow:0px 3px 8px rgba(0,0,0,.3);
+        }
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+        nav ul{
+            display:flex;
+            list-style:none;
+        }
+        nav ul li{
+            margin-left:25px;
+        }
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            transition:.3s;
+        }
+        nav ul li a:hover{
+            color:yellow;
+        }
+        .hero{
+            width:90%;
+            margin:50px auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .hero-text{
+            width:50%;
+        }
+        .hero-text h1{
+            font-size:50px;
+            color:#0d6efd;
+            margin-bottom:20px;
+        }
+        .hero-text p{
+            font-size:20px;
+            color:#555;
+            line-height:35px;
+        }
+        .hero-text button{
+            margin-top:30px;
+            padding:15px 35px;
+            border:none;
+            border-radius:6px;
+            background:#0d6efd;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+        .hero-text button:hover{
+            background:#084298;
+        }
+        .hero-image{
+            width:45%;
+        }
+        .hero-image img{
+            width:100%;
+        }
+        .title{
+            text-align:center;
+            margin-top:40px;
+            color:#0d6efd;
+        }
+        .features{
+            width:90%;
+            margin:40px auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0px 3px 10px rgba(0,0,0,.2);
+            transition:.4s;
+        }
+        .card:hover{
+            transform:translateY(-10px);
+        }
+        .card h3{
+            color:#0d6efd;
+            margin-bottom:20px;
+        }
+        .card p{
+            color:#555;
+            line-height:25px;
+        }
+        footer{
+            margin-top:60px;
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                Resume Builder
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Create Your Professional Resume</h1>
+                <p>
+                Build modern resumes quickly using our Resume Builder Application.
+                Manage user registration, create resumes, search candidates,
+                update profiles and manage everything through a simple dashboard.
+                </p>
+                <a href="register.html">
+                <button>Get Started</button>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+            </div>
+        </div>
+        <h1 class="title">Application Features</h1>
+        <div class="features">
+            <div class="card">
+                <h3>User Registration</h3>
+                <p>Create new accounts securely with a simple registration process.</p>
+            </div>
+            <div class="card">
+                <h3>Resume Management</h3>
+                <p>Create, Update, Delete and View professional resumes.</p>
+            </div>
+            <div class="card">
+                <h3>Dashboard</h3>
+                <p>Professional dashboard to manage resumes and users.</p>
+            </div>
+            <div class="card">
+                <h3>Frontend Dev</h3>
+                <p>Frontend developed using HTML, CSS and JavaScript</p>
+            </div>
+            <div class="card">
+                <h3>Backend Dev</h3>
+                <p>Backend developed using Spring Boot and MySQL Database.</p>
+            </div>
+            <div class="card">
+                <h3>Responsive Design</h3>
+                <p>Clean and modern interface suitable for desktop and laptop.</p>
+            </div>
+        </div>
+        <footer>
+        <h3>Resume Builder Application</h3>
+        <p>Developed using Spring Boot • MySQL • HTML • CSS • JavaScript</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+<title>Users Dashboard</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+body{
+    background:#f4f6f9;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+nav{
+    background:#0d6efd;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:18px;
+    font-weight:bold;
+}
+.container{
+    width:92%;
+    margin:25px auto;
+    flex: 1;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+.card{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+    text-align:center;
+}
+.panel{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.search{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+.search input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+.search button{
+    background:#0d6efd;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th{
+    background:#0d6efd;
+    color:#fff;
+}
+th,td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+tr:hover{
+    background:#eef5ff;
+}
+footer{
+    text-align:center;
+    background:#0d6efd;
+    color:#fff;
+    padding:15px;
+    margin-top:20px;
+}
+</style>
+</head>
+<body onload="getAllUsers()">
+
+<nav>
+<div><b>Resume Builder</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="register.html">Register</a>
+<a href="login.html">Login</a>
+<a href="resume.html">Resume</a>
+</div>
+</nav>
+
+<div class="container">
+
+<div class="cards">
+<div class="card">
+<h4>Total Users</h4>
+<h2 id="totalUsers">0</h2>
+</div>
+
+<div class="card">
+<h4>Application</h4>
+<h2>Resume Builder</h2>
+</div>
+
+<div class="card">
+<h4>Technology</h4>
+<h2>Java , Spring Boot</h2>
+</div>
+
+<div class="card">
+<h4>Status</h4>
+<h2 style="color:green;">Active</h2>
+</div>
+</div>
+
+<div class="panel">
+
+<h2 style="color:#0d6efd;margin-bottom:20px;">Registered Users</h2>
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+
+</tr>
+
+</thead>
+
+<tbody id="result">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+
+Resume Builder Application | User Management
+
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

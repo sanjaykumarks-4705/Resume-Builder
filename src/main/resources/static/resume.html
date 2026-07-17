@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <title>Resume Builder Dashboard</title>
+        <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Segoe UI,Arial,sans-serif;
+        }
+        body{
+            background:#f4f6f9;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+        }
+        nav{
+            background:#0d6efd;
+            color:#fff;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        nav a{
+            color:#fff;
+            text-decoration:none;
+            margin-left:18px;
+            font-weight:bold;
+        }
+        .container{
+            width:92%;
+            margin:25px auto;
+            flex: 1;
+        }
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:18px;
+            margin-bottom:25px;
+        }
+        .card{
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,.15);
+            text-align:center;
+        }
+        .main{
+            display:grid;
+            grid-template-columns:35% 63%;
+            gap:2%;
+        }
+        .panel{
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,.15);
+        }
+        h2{
+            color:#0d6efd;
+            margin-bottom:15px;
+        }
+        input{
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+            border:1px solid #ccc;
+            border-radius:6px;
+        }
+        button{
+            padding:10px 15px;
+            border:none;
+            border-radius:6px;
+            color:#fff;
+            cursor:pointer;
+            margin-top:8px;
+        }
+        .save{
+            background:#5eb36d;
+            width:100%;
+        }
+        .update{
+            background:#5eb36d;
+            width:100%;
+        }
+        .search{
+            display:flex;
+            gap:10px;
+            margin-bottom:15px;
+        }
+        .search input{
+            flex:1;
+            margin:0;
+        }
+        .search button:first-of-type{
+            background:#0d6efd;
+        }
+        .search button:last-of-type{
+            background:#198754;
+        }
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        th,td{
+            padding:10px;
+            border-bottom:1px solid #ddd;
+            text-align:center;
+        }
+        th{
+            background:#0d6efd;
+            color:#fff;
+        }
+        .action{
+            padding:6px 10px;
+            margin:2px;
+        }
+        .view{
+            background:#0d6efd;
+        }
+        .edit{
+            background:#a8a637;
+        }.delete{
+            background:#903131;
+        }
+        #resumeDetails{
+            margin-top:20px;
+            padding:15px;
+            background:#f8f9fa;
+            border-left:4px solid #0d6efd;
+            border-radius:6px;
+        }
+        footer{
+            text-align:center;
+            background:#0d6efd;
+            color:#fff;
+            padding:15px;
+            margin-top:20px;
+        }
+        </style>
+    </head>
+    <body onload="getAllResumes();">
+        <nav>
+            <div><b>Resume Builder</b></div>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="users.html">Users</a>
+            </div>
+            </nav>
+            <div class="main">
+                <div class="panel">
+                    <h2>Create / Update Resume</h2>
+                    <input id="userId" placeholder="Register NO">
+                    <input id="fullName" placeholder="Full Name">
+                    <input id="phone" placeholder="Phone">
+                    <input id="address" placeholder="Address">
+                    <input id="education" placeholder="Education">
+                    <input id="skills" placeholder="Skills">
+                    <input id="experience" placeholder="Experience">
+                    <button class="save" onclick="createResume()">Save Resume</button>
+                    <input id="updateId" placeholder="Resume ID">
+                    <button class="update" onclick="updateResume()">Update Resume</button>
+                </div>
+            <div class="panel">
+                <h2>Resume Management</h2>
+                <table>
+                <thead>
+                <tr>
+                <th>SI.NO</th><th>Resume ID</th><th>Name</th><th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="result"></tbody>
+                </table>
+            <br>
+                <form onsubmit="getResumeById(); return false">
+                <input type="number" id="resumeId" placeholder="Resume ID to View">
+                <button type="submit" style="background:#0d6efd" >View Resume</button>
+                </form>
+            <br><br>
+                <form onsubmit="deleteResume(); return false">
+                <input type="number" id="deleteId" placeholder="Resume ID to Delete">
+                <button type="submit" style="background:#903131" >Delete Resume</button>
+                </form>
+                <div id="resumeDetails">
+                    Select a resume to view details.
+                </div>
+            </div>
+            </div>
+            <footer>
+                Resume Builder Application | Resume Management
+            </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
